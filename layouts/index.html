@@ -4,15 +4,15 @@
 
 {{ define "content" -}}
   <div class="posts">
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ $pages := where site.RegularPages.ByPublishDate.Reverse "Type" "in" site.Params.mainSections }}
     
-  {{ range $pages }}
-        <div class="post">
+  {{ range first 1 $pages }}
+        <div class="featured-post">
         <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
         <span class="post-date">
           {{- .Date.Format (.Site.Params.dateformat | default "Jan 02, 2006") -}}
         </span>
-        {{ .Summary }}
+        {{ .Summary }} 
         {{ if .Truncated }}
         <div class="read-more-link">
             <a href="{{ .RelPermalink }}">Read More…</a>
@@ -20,6 +20,42 @@
         {{ end }}
         </div>
   {{- end }}
+  <h1>Recent Images</h1>
+  {{ range first 5 (where site.RegularPages.ByPublishDate.Reverse "Type" "in" "images") }}
+  
+  <span class="image">
+    {{ if .Params.pictures }}
+        {{ $path := .Params.pictures }}
+        {{ $image := resources.Get $path }}
+        {{ $thumbnail := $image.Fill "180x180 smart" }}
+        {{ with $image }}
+            {{ with .Exif }}
+                {{ $orientation := .Tags.Orientation }}
+                {{ if eq $orientation 6 }}
+                    {{ $thumbnail = $thumbnail.Resize "180x r270"}}
+                    {{ $thumbnail = $thumbnail.Fit "180x180"}}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        
+        
+    
+        <a href="{{ .Permalink }}">
+            <img class="galleryimage" src="{{ $thumbnail.Permalink }}">
+        </a>
+    {{ end }}
+</span>
+
+  {{- end }}
+
+  {{ range first 4 (after 1 $pages) }}
+  <div class="post">
+  <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <span class="post-date">
+    {{- .Date.Format (.Site.Params.dateformat | default "Jan 02, 2006") -}}
+  </span>
+  </div>
+{{- end }}
   </div>
 {{- end }}
 

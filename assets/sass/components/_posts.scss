@@ -1,0 +1,30 @@
+.posts {
+    margin: 2em 4em;
+    flex: 1 100%;
+
+    .post {
+        margin: 0 0 2em 0;
+
+        .post-date {
+            display: block;
+            font-weight: 600;
+            margin: 0.5em 0;
+        }
+
+        .post-title {
+            font-weight: 600;
+            a {
+                text-decoration: none;
+            }
+        }
+        .read-more-link {
+            margin: 0.5em 0;
+             a {
+                font-weight: 600;
+                
+            }
+        } 
+    }
+
+}
+

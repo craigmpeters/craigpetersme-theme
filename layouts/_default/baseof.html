@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
+<html lang="{{ .Site.LanguageCode }}">
+	<head>
+    {{ block "header" . -}}{{- end }}
+	</head>
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+        <div class="content container">
+            {{ block "content" . }}{{ end }}
+            <div class="footer">
+                {{ block "footer" . }}{{ end }}
+            </div>
         </div>
-        {{- partial "footer.html" . -}}
+        <!-- Google Analytics -->
+        {{ if .Site.GoogleAnalytics -}}
+            {{ template "_internal/google_analytics_async.html" . }}
+        {{- end }}        
     </body>
 </html>

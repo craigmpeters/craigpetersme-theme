@@ -1,0 +1,32 @@
+@import './colours.scss';
+
+//Light Mode Colours
+$light_background:  $pampas;
+$light_text : black;
+
+
+body {
+    color: $light_text;
+    background-color: $light_background;
+}
+
+
+.post{
+    h1 {
+        color: $thunder;
+    }
+    
+    .post-title {
+        font-weight: 900;
+        a {
+            color: $matrix;
+        }
+    }
+
+    .read-more-link {
+        a {
+
+            color: $matrix
+        }
+    }
+}
