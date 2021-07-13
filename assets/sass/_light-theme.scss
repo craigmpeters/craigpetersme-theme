@@ -4,6 +4,7 @@
 $light_background:  $pampas;
 $light_text : black;
 
+// GLOBAL
 
 body {
     color: $light_text;
@@ -11,7 +12,8 @@ body {
 }
 
 
-.post{
+// INDEX
+.post, .featured-post{
     h1 {
         color: $thunder;
     }

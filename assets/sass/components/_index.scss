@@ -1,0 +1,80 @@
+@import './colours.scss';
+
+.home {
+    margin: 2em 3em;
+    padding: 2em 1.5em;
+    background-color: $indian-khaki;
+
+
+    .post, .featured-post {
+        margin: 0 0 2em 0;
+
+        .post-date {
+            display: block;
+            font-weight: 600;
+            margin: 0.5em 0;
+        }
+
+        .post-title {
+            font-weight: 600;
+            a {
+                text-decoration: none;
+            }
+        }
+        .read-more-link {
+            margin: 0.5em 0;
+             a {
+                font-weight: 600;
+                
+            }
+        } 
+    }
+
+    .image-hero {
+        h1 {
+            font-weight: 600;
+            flex: 0 0 100%;
+            padding-bottom: 1rem;
+            color: $pampas;
+        }
+        background-color: $matrix;
+        margin: 1rem -4rem 4rem -4rem;
+        padding: 1rem;
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+        flex-flow: row wrap;
+        flex: 0 0 100%;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+        .image {
+            flex: 0 0 15%;
+            display: flex;
+            margin: 0 0.5em;
+            img {
+                border: 2px solid $thunder;
+                border-radius: 0.5rem;
+            }
+
+        }
+
+    }
+    .featured-post {
+        flex-flow: row wrap;
+        flex: 0 0 100%;
+    }
+    .historical-posts {
+        margin: 1em 0;
+        display: flex;
+        flex-flow: row wrap;
+        .post {
+            flex: 0 0 33%;
+            width: 33%;
+        }
+    }
+
+
+}
+

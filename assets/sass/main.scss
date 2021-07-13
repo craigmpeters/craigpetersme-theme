@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300,600;900&display=swap');
 @import './components/posts';
 @import './components/post';
+@import './components/index';
 // Resets
 
 * {
@@ -22,6 +23,12 @@ body {
     font-weight: 300;
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1400px;
 }
 
 // Posts

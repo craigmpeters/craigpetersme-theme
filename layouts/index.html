@@ -3,7 +3,7 @@
 {{- end }}
 
 {{ define "content" -}}
-  <div class="posts">
+  <div class="home">
   {{ $pages := where site.RegularPages.ByPublishDate.Reverse "Type" "in" site.Params.mainSections }}
     
   {{ range first 1 $pages }}
@@ -20,6 +20,10 @@
         {{ end }}
         </div>
   {{- end }}
+
+  {{/* IMAGES*/}}
+
+  <div class="image-hero">
   <h1>Recent Images</h1>
   {{ range first 5 (where site.RegularPages.ByPublishDate.Reverse "Type" "in" "images") }}
   
@@ -27,13 +31,13 @@
     {{ if .Params.pictures }}
         {{ $path := .Params.pictures }}
         {{ $image := resources.Get $path }}
-        {{ $thumbnail := $image.Fill "180x180 smart" }}
+        {{ $thumbnail := $image.Fill "200x200 smart" }}
         {{ with $image }}
             {{ with .Exif }}
                 {{ $orientation := .Tags.Orientation }}
                 {{ if eq $orientation 6 }}
-                    {{ $thumbnail = $thumbnail.Resize "180x r270"}}
-                    {{ $thumbnail = $thumbnail.Fit "180x180"}}
+                    {{ $thumbnail = $thumbnail.Resize "200x r270"}}
+                    {{ $thumbnail = $thumbnail.Fit "200x200"}}
                 {{ end }}
             {{ end }}
         {{ end }}
@@ -44,11 +48,11 @@
             <img class="galleryimage" src="{{ $thumbnail.Permalink }}">
         </a>
     {{ end }}
-</span>
-
-  {{- end }}
-
-  {{ range first 4 (after 1 $pages) }}
+  </span>
+{{- end }}
+</div>
+  <div class="historical-posts">
+  {{ range first 3 (after 1 $pages) }}
   <div class="post">
   <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
   <span class="post-date">
