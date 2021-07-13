@@ -3,7 +3,8 @@
 .home {
     margin: 2em 3em;
     padding: 2em 1.5em;
-    background-color: $indian-khaki;
+    background-color: $pampas;
+    border: 1px solid $matrix;
 
 
     .post, .featured-post {
@@ -35,12 +36,18 @@
             font-weight: 600;
             flex: 0 0 100%;
             padding-bottom: 1rem;
-            color: $pampas;
+            color: $matrix;
         }
-        background-color: $matrix;
-        margin: 1rem -4rem 4rem -4rem;
+        background-color: $indian-khaki;
+        margin: 1rem -2.5rem 4rem -2.5rem;
         padding: 1rem;
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        border: 1px solid black;
+        box-shadow: 1px 1px 0px $thunder,
+                2px 2px 0px $thunder,
+                3px 3px 0px $thunder,
+                4px 4px 0px $thunder,
+                5px 5px 0px $thunder,
+                6px 6px 0px $thunder;
 
         flex-flow: row wrap;
         flex: 0 0 100%;
@@ -54,8 +61,8 @@
             display: flex;
             margin: 0 0.5em;
             img {
-                border: 2px solid $thunder;
-                border-radius: 0.5rem;
+                border: 0.1em solid $thunder;
+                border-radius: 1.5rem;
             }
 
         }
@@ -69,12 +76,20 @@
         margin: 1em 0;
         display: flex;
         flex-flow: row wrap;
+        
         .post {
             flex: 0 0 33%;
-            width: 33%;
+            max-width: 33%;
         }
     }
-
+    .post:nth-child(2), .post:nth-child(5) {
+        padding-left: 1em;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    } 
+    .post:nth-child(3), .post:nth-child(6) {
+        padding-left: 1em;
+    }
 
 }
 
