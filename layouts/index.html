@@ -25,7 +25,7 @@
 
   <div class="image-hero">
   <h1>Recent Images</h1>
-  {{ range first 5 (where site.RegularPages.ByPublishDate.Reverse "Type" "in" "images") }}
+  {{ range first 6 (where site.RegularPages.ByPublishDate.Reverse "Type" "in" "images") }}
   
   <span class="image">
     {{ if .Params.pictures }}

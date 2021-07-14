@@ -42,6 +42,7 @@
         margin: 1rem -2.5rem 4rem -2.5rem;
         padding: 1rem;
         border: 1px solid black;
+        box-sizing: border-box;
         box-shadow: 1px 1px 0px $thunder,
                 2px 2px 0px $thunder,
                 3px 3px 0px $thunder,
@@ -49,20 +50,19 @@
                 5px 5px 0px $thunder,
                 6px 6px 0px $thunder;
 
-        flex-flow: row wrap;
-        flex: 0 0 100%;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: center;
         display: flex;
+        flex-wrap: wrap;
 
         .image {
-            flex: 0 0 15%;
-            display: flex;
-            margin: 0 0.5em;
+            box-sizing: border-box;
+            width: calc(16.66% - 1em);
+            flex: 0 0 auto;
+            margin: 0.5em;
             img {
                 border: 0.1em solid $thunder;
                 border-radius: 1.5rem;
+                width: 100%;
+                
             }
 
         }
@@ -80,16 +80,13 @@
         .post {
             flex: 0 0 33%;
             max-width: 33%;
+            padding: 0 1em;
         }
     }
     .post:nth-child(2), .post:nth-child(5) {
-        padding-left: 1em;
         border-left: 1px solid black;
         border-right: 1px solid black;
     } 
-    .post:nth-child(3), .post:nth-child(6) {
-        padding-left: 1em;
-    }
 
 }
 
