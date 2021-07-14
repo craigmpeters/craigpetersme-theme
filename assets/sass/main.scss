@@ -2,6 +2,14 @@
 @import './components/posts';
 @import './components/post';
 @import './components/index';
+
+@import './fa/fontawesome.scss';
+@import "./fa/solid.scss";
+@import "./fa/brands.scss";
+
+@import './components/partials/menu';
+
+@import './components/partials/footer';
 // Resets
 
 * {

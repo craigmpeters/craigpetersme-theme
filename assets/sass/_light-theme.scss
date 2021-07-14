@@ -11,6 +11,13 @@ body {
 
 }
 
+// HEADER
+nav .menu .menu-item {
+    a, a:visited {
+        color: $matrix;
+    }
+}
+
 
 // INDEX
 .post, .featured-post{
@@ -30,5 +37,14 @@ body {
 
             color: $matrix
         }
+    }
+}
+
+
+// FOOTER 
+
+.socials {
+    a {
+        color: $matrix;
     }
 }

@@ -1,8 +1,12 @@
+
 <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {{ "<!-- Enable responsiveness on mobile devices -->" | safeHTML }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {{ "<!-- Opengraph -->" | safeHTML }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ "<!-- EO Opengraph -->" | safeHTML }}
     {{ with .Site.Params.meta.description -}}<meta name="description" content="{{ . }}">{{- end }}
     {{ with .Site.Params.meta.keywords -}}<meta name="keywords" content="{{.}}">{{- end }}
     {{ hugo.Generator }}
