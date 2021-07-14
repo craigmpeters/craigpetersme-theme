@@ -11,6 +11,15 @@ body {
 
 }
 
+a, a:visited {
+    color: $matrix;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 // HEADER
 nav .menu .menu-item {
     a, a:visited {
