@@ -4,10 +4,13 @@
     {{ block "header" . -}}{{- end }}
 	</head>
     <body>
-        {{ partial "head.html" . }}
-        <div class="content container">
+        
+        <div class="container">
+            {{ partial "head.html" . }}
+            <div class="content">
+                {{ block "content" . }}{{ end }}
+            </div>
             
-            {{ block "content" . }}{{ end }}
             <div class="footer">
                 {{ block "footer" . }}{{ end }}
             </div>

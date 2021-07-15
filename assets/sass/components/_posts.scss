@@ -28,3 +28,13 @@
 
 }
 
+.images {
+    display: flex;
+    flex-flow: row wrap;
+    .image {
+        padding: 0.5rem;
+        img {
+            border-radius: 1rem;
+        }
+    }
+}

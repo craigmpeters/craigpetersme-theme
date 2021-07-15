@@ -3,6 +3,23 @@
     flex: 1 100%;
     p {
         margin-bottom: 1em;
+
+        img {
+            max-width: 100%;
+            margin:0.5rem;
+            border: 1px solid black;
+            border-radius: 2rem;
+        }
+
+
     }
+    ol{
+        margin-bottom: 1rem;
+        li {
+            margin-left: 2rem;
+            
+        }
+    }
+
 }
 

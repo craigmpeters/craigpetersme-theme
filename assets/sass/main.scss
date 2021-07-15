@@ -7,6 +7,7 @@
 @import "./fa/solid.scss";
 @import "./fa/brands.scss";
 
+@import './components/partials/nav';
 @import './components/partials/menu';
 
 @import './components/partials/footer';
@@ -33,10 +34,23 @@ body {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+
+    strong {
+        font-weight: 600;
+    }
 }
 
 .container {
     max-width: 1400px;
+    display: flex;
+    flex-flow: row wrap;
+    .content {
+        margin: 2em 3em;
+        padding: 2em 1.5em;
+        background-color: $pampas;
+        border: 1px solid $matrix;
+        flex: 1 1 100%;
+    }
 }
 
 // Posts
