@@ -1,11 +1,14 @@
 <div class="post">
   <h1>{{ .Title }}</h1>
   {{ if ne .Params.showpagemeta false }}
-  <div class="col-sm-12 col-md-12">
+  <div class="post-metadata">
     <span class="text-left post-date meta">
       <!-- published date -->      
       {{ if not .Date.IsZero }} 
-        <i class="fas fa-calendar-alt"></i> {{ .Date.Format (.Site.Params.dateformat | default "Jan 02, 2006") -}}
+      <span class="post-metadata-date">
+        <span class="fas fa-calendar-alt"></span>
+        <span class="post-metadata-date-date"> {{ .Date.Format (.Site.Params.dateformat | default "Jan 02, 2006") -}}</span>
+      </span>
       {{ end }}
       <!-- categories -->
       {{ with .Params.categories }}
@@ -30,10 +33,11 @@
         {{ end }}
       {{ end }}
       {{ end }}
-      <br/>
-      <i class="fas fa-clock"></i> {{ .ReadingTime }} min read 
-      </span>  
+    </span>  
   </div>    
   {{ end }}
-  {{ .Content }}
+  <div class="article-content">
+    {{ .Content }}
+  </div>
+  
 </div>

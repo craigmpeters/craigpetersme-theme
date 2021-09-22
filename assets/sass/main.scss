@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300,600;900&display=swap');
+
+// Posts and Main Front Matter
 @import './components/posts';
 @import './components/post';
 @import './components/index';
 
+// Fonts
 @import './fa/fontawesome.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300,600;900&display=swap');
+
+// Colours
 @import "./fa/solid.scss";
 @import "./fa/brands.scss";
 
+
+// Navigation Elements
 @import './components/partials/nav';
 @import './components/partials/menu';
-
 @import './components/partials/footer';
+
 // Resets
 
 * {
@@ -23,9 +30,9 @@
 @media (prefers-color-scheme: light) {
     @import './light-theme.scss';
 }
-
-
-
+@media (prefers-color-scheme: dark) {
+    @import './light-theme.scss'; //TO-DO: Dark Theme
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -34,6 +41,7 @@ body {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
 
     strong {
         font-weight: 600;
@@ -47,10 +55,6 @@ body {
     .content {
         margin: 2em 3em;
         padding: 2em 1.5em;
-        background-color: $pampas;
-        border: 1px solid $matrix;
         flex: 1 1 100%;
     }
 }
-
-// Posts

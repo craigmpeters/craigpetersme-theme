@@ -20,6 +20,13 @@ a:hover {
     text-decoration: underline;
 }
 
+.container {
+    .content {
+        background-color: $pampas;
+        border: 1px solid $matrix;
+    }
+}
+
 // HEADER
 nav .menu .menu-item {
     a, a:visited {
